@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+</head>
+<body>
+    <div id="div">
+        <div id="div1"><a href="#"><img src="rgukt.jpg" id="img" /></a></div>
+        <div id="div2"><h1 id="h1">Homepage</h1></div>
+        <b id="icon">&equiv;</b>
+
+    </div>
+    <nav id="nav1">
+
+        <ul>
+            <li><a href="/main.html" id="li" class="a">Home</a></li>
+            <li><a href="exam.html" target="a" id="li">Exam</a></li>
+            <li>
+                <a href="#" id="li">Branch</a>
+                <ul id="ul1" class="drop">
+                    <li>
+                        <a href="#" id="li1">CSE</a>
+                        <ul>
+                            <li><a href="./student.html" target="a">Student</a></li>
+                            <li><a href="./faculty.html" target="a">Faculty</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" id="li1">ECE</a>
+                        <ul>
+                            <li><a href="./student.html" target="a">Student</a></li>
+                            <li><a href="./faculty.html" target="a">Faculty</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" id="li1">MECH</a>
+                        <ul>
+                            <li><a href="./student.html" target="a">Student</a></li>
+                            <li><a href="./faculty.html" target="a">Faculty</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="/main.html" id="li">About</a></li>
+        </ul>
+
+
+    </nav>
+    <div id="nav">
+        <button id="btn">X</button>
+        <ul>
+            <li><a href="/main.html" id="a">Home</a></li>
+            <li><a href="./exam.html" target="a" id="a">Exam</a></li>
+            <li>
+                <a href="#" id="a">Branch</a>
+                <ul id="ul1" class="drop">
+                    <li>
+                        <a href="#" id="a">CSE</a>
+                        <ul>
+                            <li><a href="./student.html" target="a" id="a">Student</a></li>
+                            <li><a href="./faculty.html" target="a" id="a">Faculty</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" id="a">ECE</a>
+                        <ul>
+                            <li><a href="./student.html" target="a" id="a">Student</a></li>
+                            <li><a href="./faculty.html" target="a" id="a">Faculty</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" id="a">MECH</a>
+                        <ul>
+                            <li><a href="./faculty.html" target="a" id="a">Student</a></li>
+                            <li><a href="./faculty.html" target="a" id="a">Faculty</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="/main.html" id="a">About</a></li>
+        </ul>
+    </div>
+    <div style="display:inline-block;width:620px;height:460px;border:solid;margin-top:-50px;overflow:hidden">
+        <div style="background-color:black;width:100%;height:80px;margin-top:-30px;"><h1 style="padding-top:20px;text-align:center;background-color:black;color:burlywood;text-decoration:underline;">Contact Form</h1></div>
+        <form>
+            <div style="margin-left:100px;margin-top:20px;margin-right:40px;height:30px;"><input type="text" placeholder="Name" style="width:400px;height:50px;" required/></div>
+            <div style="margin-left:100px;margin-top:40px;margin-right:40px;height:30px;"><input type="email" placeholder="Email" style="width:400px;height:50px;" required/></div>
+            <div style="margin-left:100px;margin-top:40px;margin-right:40px;height:30px;"><input type="number" placeholder="Phone Number" style="width:400px;height:50px;" required/></div>
+            <div style="margin-left:100px;margin-top:40px;margin-right:40px;height:30px;"><input type="text" placeholder="Type Your Problem Here" style="width:400px;height:50px;" re/></div>
+            <div style="margin-left:100px;margin-top:40px;margin-right:40px;height:30px;"><input type="button" value="request" onclick="request();" style="width:400px;height:50px;background-color:lawngreen;font-size:20px;font-weight:bold;" /></div>
+        </form>
+    </div>
+    <div style="display:inline-block;width:700px;height:470px;margin-top:-50px;overflow:hidden">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15278.959856852973!2d80.82115875!3d16.78960805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1657536261837!5m2!1sen!2sin" width="700" height="470" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <script>
+
+        var v = document.getElementById("icon");
+        v.addEventListener("click", show);
+        function show() {
+            document.getElementById("nav").style.visibility = "visible";
+            document.getElementById("nav1").style.visibility = "hidden";
+            document.getElementById("maindiv").style.marginTop = "-110px";
+            document.getElementById("maindiv").style.height = "500px";
+
+
+        }
+        var v1 = document.getElementById("btn");
+        v1.addEventListener("click", hide);
+        function hide() {
+            document.getElementById("nav").style.visibility = "hidden";
+            document.getElementById("nav1").style.visibility = "visible";
+            document.getElementById("maindiv").style.marginTop = "-50px";
+            document.getElementById("maindiv").style.height = "460px";
+
+
+        }
+
+        var counter = 1;
+        setInterval(function () {
+            document.getElementById('radio' + counter).checked = true;
+            counter++;
+            if (counter > 4) {
+                counter = 1;
+            }
+        }, 5000);
+
+
+        function request() {
+            alert("Your request accepted");
+        }
+
+    </script>
+</body>
+</html>

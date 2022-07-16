@@ -1,0 +1,106 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+</head>
+<style>
+
+  .img_styles:hover .image_title
+  {
+    display: block;
+  }
+  .image_title
+  {
+    position: absolute;color:pink;
+    margin:25px 70px;
+    display: none;
+  }
+  
+</style>
+<body>
+
+    <div class="title" id="t">
+        <center>
+        <div class="img_styles">
+          <img src="/Logo.png"style="width:40px; height:40px; margin-top: 4px; margin-left: 12px;" class="logo">
+          <div class="image_title">RGUKT</div>
+        </div>
+        <span>Home Page</span>
+        <a href="#" onclick="Func();"><i class="fa fa-bars fa-2x" ></i></a>
+        </center>
+    </div>
+    <br>
+    <nav id="navg">
+    <ul>
+        <li><a href=""> Home</a></li>
+        <li><a href=""><i class="fa-solid fa-book-open-reader"></i>Exam</a>
+            <ul>
+                <li><a href="/form.html">Register</a></li>
+                <li><a href="/form.html">Login</a></li>
+            </ul>
+        </li>
+        <li><a href=""> Branch</a>
+            <ul>
+                <li><a href="">CSE</a>
+                    <ul>
+                        <li><a href="/faculty.html">Faculty</a></li>
+                        <li><a href="/student.html" onclick="return PopUp();">Student</a></li>
+                    </ul>
+                </li>   
+                <li><a href="">ECE</a></li>
+                <li><a href="">Mech</a></li>
+            </ul>
+        </li>
+        <li><a href="/main.html"> About</a></li>
+    </ul> 
+    </nav>
+    <ul id="mySidenav" class="sidenav">
+        <li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="background-color:transparent;">&times;</a></li>
+        <li><a href="#">
+          <i class="fa fa-home"></i>
+        </a></li>
+        <li><a href="#">Exam</a>
+            <ul class="exam" style="top:179px ;">
+                <li><a href="login.html">Login</a></li>
+                <li><a href="/form.html">Register</a></li>
+            </ul>
+        </li>
+        <li><a href="#" >Branch</a>
+            <ul style="top:220px">
+            <li>
+                <a href="">CSE</a>
+                <ul>
+                <li><a href="/faculty.html">Faculty</a></li>
+                <li><a href="/student.html">Student</a></li>
+                </ul>
+            </li>
+            <li><a href="">ECE</a></li>
+            <li><a href="">MECH</a></li>
+            </ul>
+        </li>
+        <li><a href=""><i class="fa fa-phone"></i></a></li>
+    </ul>
+    <div class="left_navigation">
+        <Label class="id_font">ID No:</Label>
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for ID.." class="input_box">
+        <ul>
+            <li id="myUL" ></li>
+        </ul>
+    </div>
+    <iframe src="imageslider.html" name="middle" id="image" name="m" class="image_slide"></iframe>
+    <iframe src="notification.html" frameborder="0" id="notify" class="notifi_slide"></iframe>
+        </div>
+        <footer style="background-color: black; width: 100%; height: 100px; padding-bottom: 0px;">
+          <p style="color:white; padding-top: 70px;">Copyright © 2022 Gayatri. All rights reserved</p>
+      </footer>
+    <script src="jsc.js">
+
+    </script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>   
+</body>
+</html>

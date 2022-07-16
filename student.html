@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Login page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+        header .header {
+            background-color: #fff;
+            height: 45px;
+        }
+
+        header a img {
+            width: 134px;
+            margin-top: 4px;
+        }
+
+        .login-page {
+            width: 360px;
+            padding: 8% 0 0;
+            margin: auto;
+            margin-top: 0px;
+        }
+
+            .login-page .form .login {
+                margin-top: -31px;
+                margin-bottom: 26px;
+            }
+
+        .form {
+            position: relative;
+            z-index: 1;
+            background: #FFFFFF;
+            max-width: 360px;
+            margin: 0 auto 100px;
+            padding: 45px;
+            text-align: center;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        }
+
+            .form input {
+                font-family: "Roboto", sans-serif;
+                outline: 0;
+                background: #f2f2f2;
+                width: 100%;
+                border: 0;
+                margin: 0 0 15px;
+                padding: 15px;
+                box-sizing: border-box;
+                font-size: 14px;
+            }
+
+            #submit{
+                font-family: "Roboto", sans-serif;
+                text-transform: uppercase;
+                outline: 0;
+                background-color: #328f8a;
+                background-image: linear-gradient(45deg,#328f8a,#08ac4b);
+                width: 100%;
+                border: 0;
+                padding: 15px;
+                color: #FFFFFF;
+                font-size: 14px;
+                cursor: pointer;
+            }
+
+
+        body {
+            background-color: #328f8a;
+            background-image: linear-gradient(45deg,#328f8a,#08ac4b);
+            font-family: "Roboto", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-page">
+        <div class="form">
+            <div class="login">
+                <div class="login-header">
+                    <h3 style="font-family:Arial;text-decoration:underline;color:#2f3d4e;">LOGIN</h3>
+
+                </div>
+            </div>
+            <form class="login-form" action="https://intranet.rguktn.ac.in/SMS/" method="post" onsubmit="return login();">
+                <input type="text" placeholder="Student id" id="id" required/>
+                <label style="visibility:hidden;color:red" id="valid">invalid Id!!</label>
+                <input type="text" placeholder="Student name" id="name" required/>
+                <label style="visibility:hidden;color:red" id="valid1">invalid Name!!</label>
+                <input type="submit" value="Login" id="submit" />
+            </form>
+        </div>
+    </div>
+    <script>
+       
+        function login() {
+            var v = document.getElementById("id").value;
+            var s = document.getElementById("name").value;
+            var regex = /^[n|N](18)[0-9]{4,4}$/;
+            const pattern = /^[a-zA-Z ]*$/;
+            
+            if (regex.test(v)==false) {
+                document.getElementById("id").style.borderColor = "red";
+                document.getElementById("valid").style.visibility = "visible";
+                setTimeout(id, 3000);
+                return false;
+                
+                
+
+            }
+            else if (pattern.test(s) == false) {
+                document.getElementById("name").style.borderColor = "red";
+                document.getElementById("valid1").style.visibility = "visible";
+                setTimeout(name, 3000);
+                return false;
+            }
+            else {
+                return true;
+              
+            }
+            
+            
+        }
+        function id() {
+            
+            document.getElementById("valid").style.visibility = "hidden";
+        }
+        function name() {
+            document.getElementById("valid").style.visibility = "hidden";
+        }
+        
+    </script>
+
+</body>
+</html>

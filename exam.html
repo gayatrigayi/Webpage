@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>exam</title>
+    <link rel="stylesheet" href="project1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+</head>
+<body style="background-color: rgba(20,20,20,0.4);">
+    
+    <center>
+       <div id="examdiv">
+           <center>
+               <div id="examdiv1">
+                  <a href="examlogin.html" id="an" target="a">Login</a>
+               </div>
+               <div id="examdiv2">
+                   <a href="formvalidation.html" id="an" target="a">Register</a>
+               </div>
+           </center>
+
+       </div>
+    </div>
+    </center>
+    <script>
+
+        var v = document.getElementById("icon");
+        v.addEventListener("click", show);
+        function show() {
+            document.getElementById("nav").style.visibility = "visible";
+            document.getElementById("nav1").style.visibility = "hidden";
+            document.getElementById("maindiv").style.marginTop = "-110px";
+            document.getElementById("maindiv").style.height = "500px";
+            document.getElementById("div4").style.height = "500px";
+
+
+        }
+        var v1 = document.getElementById("btn");
+        v1.addEventListener("click", hide);
+        function hide() {
+            document.getElementById("nav").style.visibility = "hidden";
+            document.getElementById("nav1").style.visibility = "visible";
+            document.getElementById("maindiv").style.marginTop = "-50px";
+            document.getElementById("maindiv").style.height = "460px";
+            document.getElementById("div4").style.height = "460px";
+
+        }
+
+        var counter = 1;
+        setInterval(function () {
+            document.getElementById('radio' + counter).checked = true;
+            counter++;
+            if (counter > 4) {
+                counter = 1;
+            }
+        }, 5000);
+
+
+
+
+    </script>
+</body>
+</html>

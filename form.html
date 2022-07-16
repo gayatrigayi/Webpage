@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Form</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <!-- <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" /> -->
+    <script src="valid.js"></script>
+    <link rel="stylesheet" href="sytlev.css">
+
+    <!-- <style type="text/css">
+        
+
+        ul li {
+            background-color: yellow;
+            width: 150px;
+            height:30px;
+            list-style: none;
+            border-radius:10px;
+            position:relative;
+        }
+
+        button {
+            position:absolute;
+            right:1px;
+            background-color: blue;
+            
+            border-radius:10px;
+        }
+
+            button:hover {
+                background-color: orangered;
+            }
+    </style> -->
+</head>
+<body>
+        <div >
+            <h2>Registration Form</h2>
+            <form id="myForm" action="s.php" method="post" onsubmit="return form();">
+                <div class="row">
+                    <label>First Name</label>
+                    <input type="text" id="fname" maxlength="30">
+                    <label style="visibility:hidden;color:red" id="valid">invalid data!!</label>
+                </div>
+                <div class="row">
+                    <label>Last Name</label>
+                    <input type="text" id="lname"/>
+                    <label style="visibility:hidden;color:red" id="valid2">invalid data!!</label>
+                </div>
+                <div class="row">
+                    <label>Full Name</label>   
+                    <input type="text" id="Funame" />
+                    <input type="button" id="check" value="show" />
+                </div>
+                <div class="row">
+                    <label>Email Address</label>    
+                    <input type="text" id='email'>
+                    <label style="visibility:hidden;color:red" id="valid3">invalid data!!</label>
+                </div>    
+                <div class="row">
+                    <label>Password</label> 
+                <input type="password" name="password"  id="myInput"    >
+                <i class="far fa-eye" id="myInputss" onclick="myFunction()" ></i>
+                <i class="fas fa-eye-slash" id="myInputs"  onclick="myFunction()"></i>
+                </div>
+                <div class="row">
+                    <label>Country</label> 
+                 <select id="country" onchange="code();">
+                    <option value="select country"></option>
+                    <option value="India">Ind</option>
+                    <option value="US">US</option>  
+                </select>
+                </div>
+                <div class="row">
+                    <label>Mobile Number</label> 
+                    <input id="output" type="text" onfocus="check();" />
+                </div>    
+                <div class="row">
+                    <label for="txtdob">Date of Birth</label>
+                    <input id="txtdob" type="date" name="txtdob" min="2000-01-01" onkeyup="getAgeVal(0)" onblur="getAgeVal(0);">
+                    <label for="txtage">Your Age</label>
+                    <input type="text" name="txtage" id="txtage" autocomplete="off" disabled>
+                </div>  
+                <div class="row">
+                    <label>Hobbies </label>
+                    <div class="form-inline">
+                        <label><input type="checkbox" name="hobbies[]" value="sports"> Sleeping</label>
+                        <label><input type="checkbox" name="hobbies[]" value="movies"> Eating</label>
+                        <label><input type="checkbox" name="hobbies[]" value="music"> Talking</label>
+                        <label><input type="checkbox" name="hobbies[]" value="music"> None</label>   
+                    </div>
+                </div>  
+
+                <div class="row">
+                    <label>Address</label>
+                    <textarea style="width:400px;height:60px;font-size:10px" id="adress" onchange="address();"></textarea>
+                </div>
+                <div>
+                    <label>Upload</label>   
+                    <input type="file" id="file" onchange="Filevalidation()">
+                </div>
+                <div class="row"    style="position:relative; display: flex;">
+                    <input type="checkbox" required style="width:12px; margin-top:6px;"> <span>I Agree Terms & Coditions</span>
+                </div>
+              
+                <input type="reset"  onClick="fun();" />
+                <input type="submit"/>
+            </form>
+
+            <div class="row">
+                <p style="color:black">if you have already an account?<br><a href="examlogin.html">click here</a>  to login</p>
+            </div>
+        </div>
+
+    <script>
+        var myform = document.getElementById("submit");
+        myform.addEventListener("click", additem, false);
+        var ul = document.getElementById("ul");
+        ul.addEventListener("click", removeitem);
+        var search = document.getElementById("search");
+        search.addEventListener("keyup", searchitem, false);
+        function additem(e) {
+
+            e.preventDefault();
+
+            var f = document.getElementById("first").value;
+            var l = document.createElement("li");
+
+            var fil = document.createTextNode(f);
+            l.appendChild(fil);
+
+            var dbtn = document.createElement("button");
+            var l1 = document.createTextNode("X");
+            dbtn.setAttribute("class", "delete");
+            dbtn.appendChild(l1);
+            l.appendChild(dbtn);
+
+            ul.appendChild(l);
+
+
+        }
+        function removeitem(e) {
+            if (e.target.classList.contains("delete")) {
+                if (confirm("Are you sure you want to delete that item?")) {
+                    var li = e.target.parentElement;
+                    ul.removeChild(li);
+                }
+            }
+        }
+        function searchitem(e) {
+            var text = e.target.value.toLowerCase();
+            var items = document.getElementsByTagName("li");
+            Array.from(items).forEach((item) => {
+                itemvalue = item.firstChild.textContent;
+                if (itemvalue.toLowerCase().indexOf(text) != -1) {
+                    item.style.display = "block";
+
+                }
+                else
+                    item.style.display = "none";
+            })
+        }
+    </script>
+    <script>
+        var v = document.getElementById("check");
+        v.addEventListener("click", fname,);
+        function fname() {
+
+            var fn = document.getElementById("fname").value;
+            var ln = document.getElementById("lname").value;
+            var v = fn + ln;
+
+
+            document.getElementById("Funame").value = v;
+
+
+
+        }
+    </script>
+    <script>
+        function address() {
+
+            var adress = document.getElementById("adress").value;
+
+
+            var num = adress.replace(/[0-9]/g, '');
+            document.getElementById("adress").value = num;
+        }
+    </script>
+
+
+
+
+    <p id="para"></p>
+    <p id="para1"></p>
+
+
+
+</body>
+
+</html>
